@@ -1,0 +1,39 @@
+<h1>locura</h1>
+<p>card works!</p>
+<button>dfssf</button>
+<ul>
+  <li 
+    *ngFor="let produto of produtos; let i = index"
+    >{{i}} - {{ produto }}
+  </li>
+  <button (click)="adicionar()">Adicionar</button>
+  <button (click)="remover()">Remover</button>
+</ul>
+<div [ngSwitch]="menuType">
+  <div *ngSwitchCase="'user'">
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartão</li>
+      <li> gerenciar usuários</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superuser'">
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartão</li>
+      <li> gerenciar usuários</li>
+      <li> gerenciar admins</li>
+    </ul>
+  </div>
+  <div *ngSwitchDefault>
+    <ul>
+      <li> nada</li>
+    </ul>
+  </div>
+</div>
